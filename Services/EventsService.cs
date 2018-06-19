@@ -15,6 +15,7 @@ namespace Services.Events
 {
     public class EventService : BaseService, IEventService
     {
+        //Get all events
         public List<Event> GetAll()
         {
             List<Event> list = new List<Event>();
@@ -26,7 +27,8 @@ namespace Services.Events
                });
             return list;
         }
-
+        
+        //Get Events By Id
         public Event GetById(int id)
         {
             Event event = new Event();
@@ -42,7 +44,8 @@ namespace Services.Events
                 });
             return event;
         }
-
+        
+        //Get Events By Athlete Id's
         public List<Event> GetEventsByAthleteId(int id)
         {
             List<Event> list = new List<Event>();
@@ -59,6 +62,7 @@ namespace Services.Events
             return list;
         }
 
+        //Create new Events
         public int Post(EventAddRequest model)
         {
             int id = 0;
@@ -108,7 +112,8 @@ namespace Services.Events
                  });
             return id;
         }
-
+        
+        //Update events
         public void Put(EventUpdateRequest model)
         {
 
@@ -140,7 +145,8 @@ namespace Services.Events
                      paramCollection.AddWithValue("@ModifiedById", model.ModifiedById);
                  });
         }
-
+        
+        //Delete Events
         public void Delete(int id)
         {
             DataProvider.ExecuteNonQuery("dbo.Events_Delete",
