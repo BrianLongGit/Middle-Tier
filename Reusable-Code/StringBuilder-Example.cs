@@ -1,8 +1,8 @@
-//Loop to Create 940 OHR
-//Declare empty strings for each section of 940 file
+//Loop to Create Order Sheet OHR
+//Declare empty strings for each section of Order Sheet file
 string OHRStringVar = string.Empty;
 
-//Declares new stringbuilder for each section of 940 file
+//Declares new stringbuilder for each section of Order Sheet file
 StringBuilder OHRStringBuilder = new StringBuilder();
 
 //Gets properties of orderHeaderRecord to loop over properties
