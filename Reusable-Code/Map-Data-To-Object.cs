@@ -1,5 +1,5 @@
-  //writes 940 to a text file
-  using (StreamWriter OrderSheet = new StreamWriter(@"C:\Users\blong\Desktop\940sheet7.txt"))
+  //writes Order Sheet JSON to a a Tab Delimited EDI text file
+  using (StreamWriter OrderSheet = new StreamWriter(@"C:\Users\blong\Desktop\OrderSheet.txt"))
   {
       var recordNumber = 1;
       for (var i = 0; i < rootObject.orders.Count; i++)//rootObject.orders.Count
@@ -67,11 +67,11 @@
               customer_tax_id = rootObject.orders[i].customer.customer_tax_id.PadRight(3, ' '),
           };
 
-          //Loop to Create 940 OHR
-          //Declare empty strings for each section of 940 file
+          //Loop to Create Order Sheet OHR
+          //Declare empty strings for each section of Order Sheet file
           string OHRStringVar = string.Empty;
           
-          //Declares new stringbuilder for each section of 940 file
+          //Declares new stringbuilder for each section of Order Sheet file
           StringBuilder OHRStringBuilder = new StringBuilder();
           
           //Gets properties of orderHeaderRecord to loop over properties
